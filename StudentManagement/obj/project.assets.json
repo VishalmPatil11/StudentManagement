@@ -6363,11 +6363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "projectUniqueName": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
       "projectName": "StudentManagement",
-      "projectPath": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "projectPath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
       "packagesPath": "C:\\Users\\patil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\obj\\",
+      "outputPath": "D:\\StudentManagement\\StudentManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6869,5 +6869,13 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

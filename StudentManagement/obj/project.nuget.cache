@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVK5LbLI6Gk=",
+  "dgSpecHash": "Pke/9EHkV3k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+  "projectFilePath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\patil\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\patil\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -134,5 +134,15 @@
     "C:\\Users\\patil\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
     "C:\\Users\\patil\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

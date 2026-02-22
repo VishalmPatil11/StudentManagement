@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {}
+    "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {
+    "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+        "projectUniqueName": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
         "projectName": "StudentManagement",
-        "projectPath": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+        "projectPath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
         "packagesPath": "C:\\Users\\patil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patil\\source\\repos\\StudentManagement\\StudentManagement\\obj\\",
+        "outputPath": "D:\\StudentManagement\\StudentManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

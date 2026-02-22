@@ -9,6 +9,18 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form id="searchForm" method="get" asp-action="Search">
+    <div class="mb-3">
+        <div class="input-group">
+            <input type="text" name="searchString" id="searchString" value="@ViewBag.SearchString" class="form-control @(ViewBag.SearchError != null ? "is-invalid" : "")" placeholder="Enter name or age" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+        @if (ViewBag.SearchError != null)
+        {
+            <div class="invalid-feedback d-block">@ViewBag.SearchError</div>
+        }
+    </div>
+</form>
 @if (Model != null && Model.Any()){
 
 <table class="table">
@@ -60,7 +72,14 @@
 }
 else
 {
-    <p>No Students</p>
+    if (!string.IsNullOrWhiteSpace((string)ViewBag.SearchString))
+    {
+        <p>No students found for "@ViewBag.SearchString"</p>
+    }
+    else
+    {
+        <p>No Students</p>
+    }
 }
 <p>
     <a asp-action="Index">Go to Student page</a>

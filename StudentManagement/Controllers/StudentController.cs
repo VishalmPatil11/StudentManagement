@@ -41,7 +41,7 @@ namespace StudentManagement.Controllers
             }
             return View(student);
         }
-
+        [Microsoft.AspNetCore.Authorization.Authorize]
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -52,6 +52,7 @@ namespace StudentManagement.Controllers
             }
             return View(std);
         }
+        [Microsoft.AspNetCore.Authorization.Authorize]
         [HttpPost]
         public IActionResult Edit(Student student)
         {
@@ -64,6 +65,7 @@ namespace StudentManagement.Controllers
         }
 
         [HttpGet]
+        [Microsoft.AspNetCore.Authorization.Authorize]
         public IActionResult Delete(int id)
         {
             var std = _student.GetStudent(id);
@@ -74,6 +76,7 @@ namespace StudentManagement.Controllers
             return View(std);
         }
         [HttpPost]
+        [Microsoft.AspNetCore.Authorization.Authorize]
         public IActionResult Delete(Student student)
         {
             if (ModelState.IsValid)
@@ -86,6 +89,14 @@ namespace StudentManagement.Controllers
         [HttpGet]
         public IActionResult Search(string searchString)
         {
+            // If the user submitted the form with an empty string, show inline validation
+            if (searchString != null && string.IsNullOrWhiteSpace(searchString))
+            {
+                ViewBag.SearchString = string.Empty;
+                ViewBag.SearchError = "Please enter a search term";
+                return View(new System.Collections.Generic.List<Student>());
+            }
+
             IQueryable<Student> query = _student.GetStudents();
 
             if (!string.IsNullOrWhiteSpace(searchString))
@@ -103,6 +114,10 @@ namespace StudentManagement.Controllers
                 }
             }
             var result = query.ToList();
+
+            // Pass the original search string back to the view so it can show messages and populate the input
+            ViewBag.SearchString = searchString;
+
             return View(result);
         }
     }

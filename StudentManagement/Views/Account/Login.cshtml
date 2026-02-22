@@ -1,0 +1,19 @@
+@model StudentManagement.Models.User
+
+<form method="post" asp-action="Login" asp-controller="Account">
+    <div>
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div>
+        <label asp-for="PasswordHash"></label>
+        <input asp-for="PasswordHash" type="password" />
+        <span asp-validation-for="PasswordHash"></span>
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.7/jquery.validate.unobtrusive.min.js"></script>
