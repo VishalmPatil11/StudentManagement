@@ -2,6 +2,8 @@ using System.Text;
 using System.Linq;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.ResponseCompression;
 using System.IO.Compression;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -15,6 +17,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddValidatorsFromAssemblyContaining<StudentManagement.Models.StudentValidator>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
 builder.Services.AddDbContext<StudentDbContext>();
 builder.Services.AddScoped<IStudent, StudentService>();
 

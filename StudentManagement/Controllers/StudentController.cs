@@ -89,14 +89,6 @@ namespace StudentManagement.Controllers
         [HttpGet]
         public IActionResult Search(string searchString)
         {
-            // If the user submitted the form with an empty string, show inline validation
-            if (searchString != null && string.IsNullOrWhiteSpace(searchString))
-            {
-                ViewBag.SearchString = string.Empty;
-                ViewBag.SearchError = "Please enter a search term";
-                return View(new System.Collections.Generic.List<Student>());
-            }
-
             IQueryable<Student> query = _student.GetStudents();
 
             if (!string.IsNullOrWhiteSpace(searchString))

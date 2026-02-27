@@ -10,17 +10,32 @@
     <a asp-action="Create">Create New</a>
 </p>
 <form id="searchForm" method="get" asp-action="Search">
-    <div class="mb-3">
-        <div class="input-group">
-            <input type="text" name="searchString" id="searchString" value="@ViewBag.SearchString" class="form-control @(ViewBag.SearchError != null ? "is-invalid" : "")" placeholder="Enter name or age" />
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-        @if (ViewBag.SearchError != null)
-        {
-            <div class="invalid-feedback d-block">@ViewBag.SearchError</div>
-        }
+    <div class="input-group mb-3">
+        <input type="text" name="searchString" id="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Enter name or age" />
+        <button type="submit" class="btn btn-outline-secondary">Search</button>
     </div>
 </form>
+<script>
+    (function(){
+        var form = document.getElementById('searchForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            var v = document.getElementById('searchString').value;
+            if (!v || !v.trim()) {
+                e.preventDefault();
+                // show inline message instead of alert
+                var existing = document.getElementById('searchError');
+                if (!existing) {
+                    var p = document.createElement('div');
+                    p.id = 'searchError';
+                    p.className = 'text-danger mb-2';
+                    p.innerText = 'Please enter a search term.';
+                    form.parentNode.insertBefore(p, form.nextSibling);
+                }
+            }
+        });
+    })();
+</script>
 @if (Model != null && Model.Any()){
 
 <table class="table">

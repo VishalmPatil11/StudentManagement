@@ -30,7 +30,7 @@ namespace StudentManagement.Controllers
         }
 
         [HttpPost("login")]
-        public async System.Threading.Tasks.Task<IActionResult> Login(User model)
+        public async Task<IActionResult> Login(User model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -104,7 +104,7 @@ namespace StudentManagement.Controllers
 
         [HttpPost("logout")]
         [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout()
         {
             // Sign out the cookie authentication
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -119,7 +119,7 @@ namespace StudentManagement.Controllers
         }
 
         [HttpGet("logout")]
-        public async System.Threading.Tasks.Task<IActionResult> LogoutGet()
+        public async Task<IActionResult> LogoutGet()
         {
             return await Logout();
         }
